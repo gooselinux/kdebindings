@@ -1,0 +1,38 @@
+diff -up kdebindings-4.3.4-patched/python/pykde4/CMakeLists.txt.orig kdebindings-4.3.4-patched/python/pykde4/CMakeLists.txt
+diff -up kdebindings-4.3.4-patched/python/pykde4/sip/plasma/abstractrunner.sip.orig kdebindings-4.3.4-patched/python/pykde4/sip/plasma/abstractrunner.sip
+--- kdebindings-4.3.4-patched/python/pykde4/sip/plasma/abstractrunner.sip.orig	2010-06-28 18:28:52.620697526 +0200
++++ kdebindings-4.3.4-patched/python/pykde4/sip/plasma/abstractrunner.sip	2010-06-28 18:25:41.481461544 +0200
+@@ -58,7 +58,6 @@
+ #include <plasma/widgets/textedit.h>
+ #include <plasma/theme.h>
+ #include <plasma/view.h>
+-#include <plasma/widgets/webview.h>
+ #include <plasma/widgets/busywidget.h>
+ #include <plasma/context.h>
+ #include <plasma/extender.h>
+@@ -279,8 +278,6 @@ public:
+         sipClass = sipClass_Plasma_View;
+     else if (dynamic_cast<Plasma::Wallpaper*>(sipCpp))
+         sipClass = sipClass_Plasma_Wallpaper;
+-    else if (dynamic_cast<Plasma::WebView*>(sipCpp))
+-        sipClass = sipClass_Plasma_WebView;
+ %End
+ 
+ };   // AbstractRunner
+diff -up kdebindings-4.3.4-patched/python/pykde4/sip/plasma/plasmamod.sip.orig kdebindings-4.3.4-patched/python/pykde4/sip/plasma/plasmamod.sip
+--- kdebindings-4.3.4-patched/python/pykde4/sip/plasma/plasmamod.sip.orig	2010-06-28 18:23:42.608696843 +0200
++++ kdebindings-4.3.4-patched/python/pykde4/sip/plasma/plasmamod.sip	2010-06-28 18:32:19.126696058 +0200
+@@ -28,7 +28,6 @@
+ %Import QtNetwork/QtNetworkmod.sip
+ %Import QtXml/QtXmlmod.sip
+ %Import QtSvg/QtSvgmod.sip
+-%Import QtWebKit/QtWebKitmod.sip
+ %Import kdecore/kdecoremod.sip
+ %Import kdeui/kdeuimod.sip
+ 
+@@ -98,5 +97,3 @@
+ %Include toolbutton.sip
+ %Include treeview.sip
+ %Include videowidget.sip
+-%Include webview.sip
+-
